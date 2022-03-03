@@ -1,0 +1,15 @@
+D:\projects\E621 fav scraper\obj\Debug\net6.0\E621 fav scraper.csproj.AssemblyReference.cache
+D:\projects\E621 fav scraper\obj\Debug\net6.0\E621 fav scraper.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\E621 fav scraper\obj\Debug\net6.0\E621 fav scraper.AssemblyInfoInputs.cache
+D:\projects\E621 fav scraper\obj\Debug\net6.0\E621 fav scraper.AssemblyInfo.cs
+D:\projects\E621 fav scraper\obj\Debug\net6.0\E621 fav scraper.csproj.CoreCompileInputs.cache
+D:\projects\E621 fav scraper\bin\Debug\net6.0\E621 fav scraper.exe
+D:\projects\E621 fav scraper\bin\Debug\net6.0\E621 fav scraper.deps.json
+D:\projects\E621 fav scraper\bin\Debug\net6.0\E621 fav scraper.runtimeconfig.json
+D:\projects\E621 fav scraper\bin\Debug\net6.0\E621 fav scraper.dll
+D:\projects\E621 fav scraper\bin\Debug\net6.0\E621 fav scraper.pdb
+D:\projects\E621 fav scraper\obj\Debug\net6.0\E621 fav scraper.dll
+D:\projects\E621 fav scraper\obj\Debug\net6.0\refint\E621 fav scraper.dll
+D:\projects\E621 fav scraper\obj\Debug\net6.0\E621 fav scraper.pdb
+D:\projects\E621 fav scraper\obj\Debug\net6.0\E621 fav scraper.genruntimeconfig.cache
+D:\projects\E621 fav scraper\obj\Debug\net6.0\ref\E621 fav scraper.dll
