@@ -18,10 +18,11 @@ namespace Scraper
         }
         static async void APIHandler()
         {
-            string WebsiteAdress = "https://e621.net/favorites.json?user_id=413332";
+            Console.WriteLine("Please enter the user_id from which you would like to get the favorites");
+            string WebsiteAdress = "https://e621.net/favorites.json?user_id=" + Console.ReadLine();
             HttpClient APIHandler = new HttpClient();
             HttpResponseMessage message = new HttpResponseMessage();
-            APIHandler.DefaultRequestHeaders.Add("User-Agent", "test by actinoide");
+            APIHandler.DefaultRequestHeaders.Add("User-Agent", "favorite scraper by actinoide");
             try
             {
                 message = await APIHandler.GetAsync(WebsiteAdress);
@@ -39,14 +40,18 @@ namespace Scraper
             String content = await message.Content.ReadAsStringAsync();
             Data Data = JsonSerializer.Deserialize<Data>(content);
             if (Data == null) return;
+            Console.WriteLine("please enter the folder path youd like the files to be saved to");
+            string path = Console.ReadLine();
+            if (!System.IO.Directory.Exists(path))
+            {
+                Console.WriteLine("invalid folder path");
+                return;
+            }
             foreach (Post thing in Data.posts)
             {
-                Console.WriteLine(thing.file.url);
-
-
                 using (HttpClient client = new HttpClient())
                 {
-                    HttpResponseMessage message1 = await client.GetAsync("https://static1.e621.net/data/1b/93/1b933a1411cb86392f32a056ef9fa4b4.webm");
+                    HttpResponseMessage message1 = await client.GetAsync(thing.file.url);
                     HttpContent content1 = message1.Content;
                     Stream response = content1.ReadAsStream();
                     byte[] imagebytes;
@@ -56,23 +61,22 @@ namespace Scraper
                     }
                     if (content1.Headers.ContentType.MediaType == "image/jpeg")
                     {
-                        FileStream fs = new FileStream(@"D:\" + thing.id + ".jpeg", FileMode.Create);
+                        FileStream fs = new FileStream(path + thing.id + ".jpeg", FileMode.Create);
                         BinaryWriter bw = new BinaryWriter(fs);
                         bw.Write(imagebytes);
                     }
                     else if (content1.Headers.ContentType.MediaType == "image/png")
                     {
-                        FileStream fs = new FileStream(@"D:\" + thing.id + ".png", FileMode.Create);
+                        FileStream fs = new FileStream(path + thing.id + ".png", FileMode.Create);
                         BinaryWriter bw = new BinaryWriter(fs);
                         bw.Write(imagebytes);
                     }
                     else if (content1.Headers.ContentType.MediaType == "video/webm")
                     {
-                        FileStream fs = new FileStream(@"D:\" + thing.id + ".webm", FileMode.Create);
+                        FileStream fs = new FileStream(path + thing.id + ".webm", FileMode.Create);
                         fs.Write(imagebytes);
                     }
                 }
-                //System.IO.File.WriteAllBytes(@"D:\test", await client.GetByteArrayAsync(@"https://static1.e621.net/data/52/54/5254268070398834a922b115303b7d10.jpg"));
             }
         }
     }

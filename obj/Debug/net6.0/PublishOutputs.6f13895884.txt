@@ -1,0 +1,5 @@
+D:\projects\E621 fav scraper\bin\Debug\net6.0\publish\E621 fav scraper.exe
+D:\projects\E621 fav scraper\bin\Debug\net6.0\publish\E621 fav scraper.dll
+D:\projects\E621 fav scraper\bin\Debug\net6.0\publish\E621 fav scraper.deps.json
+D:\projects\E621 fav scraper\bin\Debug\net6.0\publish\E621 fav scraper.runtimeconfig.json
+D:\projects\E621 fav scraper\bin\Debug\net6.0\publish\E621 fav scraper.pdb

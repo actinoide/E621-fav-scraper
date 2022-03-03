@@ -1,0 +1,1 @@
+to get someones user id go to e6 => Account => search users => select the user whos favorites you want to download => copy the number in the url 
